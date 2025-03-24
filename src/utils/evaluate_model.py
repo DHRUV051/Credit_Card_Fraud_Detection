@@ -34,7 +34,7 @@ def evaluate_model(X_train, y_train, X_test, y_test, models, params):
             if model_name in params and params[model_name]:  
                 search_iter = min(10, len(params[model_name]))  
                 
-                rs = RandomizedSearchCV(model, params[model_name], cv=3, scoring="f1", n_jobs=-1, n_iter=search_iter)
+                rs = RandomizedSearchCV(model, params[model_name], cv=3, scoring="f1", n_jobs=-1, n_iter=search_iter, random_state=42)
 
                 rs.fit(X_train, y_train)
 

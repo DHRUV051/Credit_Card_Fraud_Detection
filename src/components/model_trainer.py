@@ -14,6 +14,7 @@ from xgboost import XGBClassifier
 from catboost import CatBoostClassifier
 from sklearn.neighbors import KNeighborsClassifier
 
+os.environ["LOKY_MAX_CPU_COUNT"] = "6"
 logger = setup_logger()
 
 @dataclass
