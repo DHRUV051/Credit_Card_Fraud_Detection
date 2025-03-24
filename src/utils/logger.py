@@ -7,7 +7,7 @@ from colorlog import ColoredFormatter
 sys.stdout.reconfigure(encoding="utf-8")
 sys.stderr.reconfigure(encoding="utf-8")
 
-def setup_logger(log_level="DEBUG"):
+def setup_logger(log_level="INFO"):
     logger_name = "CustomLogger"
     logger = logging.getLogger(logger_name)
 
