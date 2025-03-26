@@ -15,15 +15,15 @@ def run_pipeline():
     try:
         logger.info("🚀 Starting Credit Card Fraud Detection Pipeline...")
 
-        # 📥 Step 1: Data Ingestion
         logger.info("📥 Initiating Data Ingestion...")
         ingestion = DataIngestion()
         train_path, test_path = ingestion.initiate_data_ingestion()
         logger.info(f"✅ Data Ingestion Complete: Train: {train_path}, Test: {test_path}")
 
-        # 🔄 Step 2: Data Transformation
+        
         logger.info("🔄 Initiating Data Transformation...")
         transformation = DataTransformation()
+        
         train_array, test_array, preprocessor_path = transformation.initiate_data_transformation(train_path, test_path)
         logger.info(f"✅ Data Transformation Complete. Preprocessor saved at: {preprocessor_path}")
 

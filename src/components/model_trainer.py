@@ -38,7 +38,7 @@ class ModelTrainer:
                 test_array[:, :-1],   
                 test_array[:, -1],
             )
-
+            
             logger.info("🚀 Initializing classification models...")
 
             models = {

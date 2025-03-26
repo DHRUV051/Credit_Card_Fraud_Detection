@@ -8,4 +8,6 @@ catboost
 setuptools
 colorlog
 dill
+flask
+flask-wtf
 -e .

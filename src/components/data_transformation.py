@@ -31,7 +31,7 @@ class DataTransformation:
         
         try:
             
-            numerical_columns = [f"V{i}" for i in range(1, 29)] + ["Amount", "Time"]
+            numerical_columns = [f"V{i}" for i in range(1, 29)] + ["Amount"]
             
             num_pipeline = Pipeline(
                 steps=[
@@ -66,6 +66,12 @@ class DataTransformation:
             train_df = pd.read_csv(train_path)
             test_df = pd.read_csv(test_path)
             
+            train_df = train_df.drop(columns=["Time"], errors="ignore").reset_index(drop=True)
+            
+            test_df = test_df.drop(columns=["Time"], errors="ignore").reset_index(drop=True)
+            
+            logger.info("🗑 Dropped 'Time' column and reset index.")
+
             logger.info("📂 Train and test data loaded successfully.")
 
             preprocessor = self.get_date_transformar_object()
